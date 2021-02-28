@@ -1,0 +1,35 @@
+{% extends "base.twig" %}
+{% block content %}
+    <div id="mainPredict" style="display: {{ id ? "none" : "" }} ">
+        <div class="row w3-container w3-border w3-round-xlarge question" id="predictQuestion"></div>
+        <div class="row w3-container w3-border w3-round-xlarge predictAnswers">
+            <div class="col"></div>
+            <div class="col" id="predictAnswer1"></div>
+            <div class="col" id="predictAnswer2"></div>
+            <div class="col" id="predictAnswer3"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div id="next" class="col text-right"></div>
+            <a href="../index.php?id=1" class="next">İleri</a>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="row w3-container w3-border w3-round-xlarge question" id="question"></div>
+        <div class="row w3-container w3-border w3-round-xlarge answers">
+            <div class="col"></div>
+            <div class="col" id="answer1"></div>
+            <div class="col" id="answer2"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row home" style="display: none">
+            <div id="next" class="col text-right"></div>
+            <a href="../index.php?id=0" class="next">Başa Dön</a>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="/templates/js/index.js?v={{ version }}"></script>
+    <script>getPage({{ id }})</script>
+{% endblock %}
